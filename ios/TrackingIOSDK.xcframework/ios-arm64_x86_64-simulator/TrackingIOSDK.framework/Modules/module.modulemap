@@ -1,0 +1,30 @@
+framework module TrackingIOSDK {
+    umbrella header "Tracking.h"
+
+    export *
+ 
+    module * {
+         export *
+     }
+
+    link framework "AdSupport"
+    link framework "CoreTelephony"
+    link framework "Security"
+    link framework "StoreKit"//to be removed
+    link framework "AdServices"//optional
+    link framework "SystemConfiguration"
+    link framework "AVFoundation"
+    link framework "CFNetwork"
+    link framework "Foundation"
+    link framework "WebKit"
+
+    link "z"
+    link "sqlite3"
+    link "resolv.9"
+    link "resolv"
+    link "c++"
+    link "z"
+
+
+}
+

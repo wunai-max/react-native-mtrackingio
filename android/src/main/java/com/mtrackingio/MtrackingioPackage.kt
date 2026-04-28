@@ -1,31 +1,18 @@
 package com.mtrackingio
 
-import com.facebook.react.BaseReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.module.model.ReactModuleInfo
-import com.facebook.react.module.model.ReactModuleInfoProvider
-import java.util.HashMap
+import com.facebook.react.bridge.ReactPackage
+import com.facebook.react.uimanager.ViewManager
 
-class MtrackingioPackage : BaseReactPackage() {
-  override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
-    return if (name == MtrackingioModule.NAME) {
-      MtrackingioModule(reactContext)
-    } else {
-      null
-    }
+class MtrackingioPackage : ReactPackage {
+  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
+    return listOf(MtrackingioModule(reactContext))
   }
 
-  override fun getReactModuleInfoProvider() = ReactModuleInfoProvider {
-    mapOf(
-      MtrackingioModule.NAME to ReactModuleInfo(
-        name = MtrackingioModule.NAME,
-        className = MtrackingioModule.NAME,
-        canOverrideExistingModule = false,
-        needsEagerInit = false,
-        isCxxModule = false,
-        isTurboModule = true
-      )
-    )
+  override fun createViewManagers(
+    reactContext: ReactApplicationContext
+  ): List<ViewManager<*, *>> {
+    return emptyList()
   }
 }

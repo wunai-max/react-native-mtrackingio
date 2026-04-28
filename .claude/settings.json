@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn install *)",
+      "Bash(xcodebuild -workspace \"ios/Mtrackingio.xcworkspace\" -scheme \"Mtrackingio\" -sdk iphonesimulator -configuration Debug build)",
+      "Bash(npm publish *)",
+      "Bash(npm whoami *)"
+    ]
+  }
+}

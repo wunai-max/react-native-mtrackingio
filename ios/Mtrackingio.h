@@ -1,5 +1,7 @@
-#import <MtrackingioSpec/MtrackingioSpec.h>
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+#import <TrackingIOSDK/Tracking.h>
 
-@interface Mtrackingio : NSObject <NativeMtrackingioSpec>
+@interface Mtrackingio : RCTEventEmitter <RCTBridgeModule, DeferredDeeplinkCalllback>
 
 @end
